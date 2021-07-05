@@ -7,8 +7,6 @@ def getidxTFIDF(docDataDic, dic, docTFIDFdata, noTotaldata, noPdata):
     docindex = 0
     for document in docDataDic.keys():
         thisDoc = docDataDic.get(document)
-        # dataListWordVal = [(x, docTFIDFdata[thisDoc].get(x)) for x in docTFIDFdata[thisDoc].keys()]
-        # dataListWordVal = docTFIDFdata[thisDoc].most_common()
         for x in docTFIDFdata[thisDoc].keys():
             if dic.get(x) is None:
                 continue
@@ -18,4 +16,5 @@ def getidxTFIDF(docDataDic, dic, docTFIDFdata, noTotaldata, noPdata):
         else:
             classDoc[docindex] = -1
         docindex = docindex + 1
+
     return tfIDFval, docSize, vocSize, classDoc
