@@ -24,20 +24,10 @@ def getProcessedContentsByLineFromFiles(filep, filen):
                     after_spliting[index] = num2words(after_spliting[index])
             numbers_to_words = " ".join(after_spliting)
 
-            ## to ASCII
-            # text = unidecode(numbers_to_words)
-
             sentencesp = sent_tokenize(numbers_to_words.lower())
             sep_sentencesp = []
             for sentence in sentencesp:
                 tagged_token = word_tokenize(sentence)
-
-                # ## fix spelling
-                # correct_spell_words = []
-                # for word in tagged_token:
-                #     correct_word = spell_corrector(word)
-                #     correct_spell_words.append(correct_word)
-
                 tagged_words = nltk.pos_tag(tagged_token)
                 sep_sentence = " ".join(w for (w, t) in tagged_words if t.startswith('JJ') or t.startswith('NN') or t.startswith('VB') or t.startswith('RB'))
                 sep_sentencesp.append(sep_sentence)
@@ -60,20 +50,10 @@ def getProcessedContentsByLineFromFiles(filep, filen):
                     after_spliting[index] = num2words(after_spliting[index])
             numbers_to_words = " ".join(after_spliting)
 
-            # # to ASCII
-            # text = unidecode(numbers_to_words)
-
             sentencesn = sent_tokenize(numbers_to_words.lower())
             sep_sentencesn = []
             for sentence in sentencesn:
                 tagged_token = word_tokenize(sentence)
-
-                #  ## fix spelling
-                # correct_spell_words = []
-                # for word in tagged_token:
-                #     correct_word = spell_corrector(word)
-                #     correct_spell_words.append(correct_word)
-
                 tagged_words = nltk.pos_tag(tagged_token)
                 sep_sentence = " ".join(w for (w, t) in tagged_words if t.startswith('JJ') or t.startswith('NN') or t.startswith('VB') or t.startswith('RB'))
                 sep_sentencesn.append(sep_sentence)
