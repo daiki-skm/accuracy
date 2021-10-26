@@ -2,7 +2,7 @@ from newsapi import NewsApiClient
 
 
 def get_url() -> None:
-    newsapi = NewsApiClient(api_key='c8ac3154f53c47cb992f106527e9cd51')
+    newsapi = NewsApiClient(api_key='')
 
     p_data = newsapi.get_top_headlines(category='business')
     n_data = newsapi.get_top_headlines(category='sports')
